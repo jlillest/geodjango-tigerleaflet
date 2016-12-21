@@ -1,0 +1,24 @@
+{% extends "tigerleaflet-base.html" %}
+
+{% block title %}tigerleaflet demo map{% endblock %}
+
+{% block tigerleaflet_header %}{% endblock %}
+
+{% block tigerleaflet_content %}
+  <script>
+    var map = tigerleafletMap('map', [37.22, -90.41], 3);
+
+    var map_data = {
+      prefix:   "/tigerleaflet/",
+      url:      "{% url 'tigerleaflet:state_data' %}",
+      map:      map,
+      data:     null,
+      function: addStateData,
+    }
+
+    getGeojson(map_data);
+
+  </script>
+{% endblock %}
+
+{% block tigerleaflet_javascript %}{% endblock %}

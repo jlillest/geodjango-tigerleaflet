@@ -1,0 +1,25 @@
+{% extends "app_base.html" %}
+
+{% load staticfiles %}
+{% load leaflet_tags %}
+{% load geojson_tags %}
+
+{% block title %}{% endblock %}
+
+{% block extra_header %}
+  {% leaflet_css %}
+  {% leaflet_js %}
+  <link rel="stylesheet" href="{% static 'css/tigerleaflet.css' %}">
+  <script src='{% static "js/jquery.min.js" %}'></script>
+  <script src='{% static "js/tigerleaflet.js" %}'></script>
+  {% block tigerleaflet_header %}{% endblock %}
+{% endblock %}
+
+{% block content %}
+  <div id="map" style="width: 600px; height: 400px;" class="leaflet-container-default"></div>
+  {% block tigerleaflet_content %}{% endblock %}
+{% endblock %}
+
+{% block extra_javascript %}
+  {% block tigerleaflet_javascript %}{% endblock %}
+{% endblock %}

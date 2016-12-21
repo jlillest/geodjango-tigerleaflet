@@ -1,0 +1,26 @@
+{% extends "tigerleaflet-base.html" %}
+
+{% block title %}Showing counties for {{ county }}, {{ state }}{% endblock %}
+
+{% block tigerleaflet_header %}{% endblock %}
+
+{% block tigerleaflet_content %}
+  <div id="map" style="width: 600px; height: 400px;" class="leaflet-container-default"></div>
+  <script>
+    var map = tigerleafletMap('map', [37.22, -90.41], 3);
+
+    var map_data = {
+      prefix:   "/tigerleaflet/",
+      url:      "{% url 'tigerleaflet:county_data' %}",
+      map:      map,
+      data:     { 'state':  '{{ state }}',
+                  'county': '{{ county }}',
+                  },
+      function: addCountyData,
+    }
+    getGeojson(map_data);
+
+  </script>
+{% endblock %}
+
+{% block tigerleaflet_javascript %}{% endblock %}
