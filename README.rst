@@ -40,6 +40,14 @@ Features
 * GeoJson urls for easy map creation
 * example Leaflet pages for displaying and navigating through state/county data
 
+Todo
+--------
+
+* Push models back into geodjango-tigerline once it's upgraded to use Django 1.10
+* Make the current templates more generic through the use of template tags, needs to be coupled with the provided javascript
+* Better documentation on pypi
+* Offer direct download and import of census data (like django-brasil-municipios)
+
 Running Tests
 -------------
 
