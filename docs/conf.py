@@ -173,7 +173,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Leaflet for Geodjango with US TIGER State and County datadoc'
+htmlhelp_basename = 'geodjango-tigerleaflet'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -192,7 +192,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'Leaflet for Geodjango with US TIGER State and County data.tex', u'geodjango-tigerleaflet Documentation',
+  ('index', 'geodjango-tigerleafletx', u'geodjango-tigerleaflet Documentation',
    u'Jon Lillestolen', 'manual'),
 ]
 
@@ -222,7 +222,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'Leaflet for Geodjango with US TIGER State and County data', u'geodjango-tigerleaflet Documentation',
+    ('index', 'geodjango-tigerleaflet', u'geodjango-tigerleaflet Documentation',
      [u'Jon Lillestolen'], 1)
 ]
 
@@ -236,8 +236,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'Leaflet for Geodjango with US TIGER State and County data', u'geodjango-tigerleaflet Documentation',
-   u'Jon Lillestolen', 'Leaflet for Geodjango with US TIGER State and County data', 'One line description of project.',
+  ('index', 'geodjango-tigerleaflet', u'geodjango-tigerleaflet Documentation',
+   u'Jon Lillestolen', 'geodjango-tigerleaflet', 'One line description of project.',
    'Miscellaneous'),
 ]
 
