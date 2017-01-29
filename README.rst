@@ -2,7 +2,8 @@
 geodjango-tigerleaflet
 =============================
 
-Leaflet setup for US Tiger State and County data
+Make use of Geodjango, Leaflet.js, US Census TIGER data to allow navigation through
+ data related to US States and Counties
 
 Quickstart
 ----------
@@ -39,30 +40,20 @@ Features
 
 * GeoJson urls for easy map creation
 * example Leaflet pages for displaying and navigating through state/county data
+* template tags for users to use in their own templates
 
 Todo
 --------
 
 * Push models back into geodjango-tigerline once it's upgraded to use Django 1.10
-* Make the current templates more generic through the use of template tags, needs to be coupled with the provided javascript
 * Better documentation on pypi
+* Better examples, even with some adding data on top of states/counties showcasing use of leaflet library
 * Offer direct download and import of census data (like django-brasil-municipios)
-
-Running Tests
--------------
-
-Does the code actually work?
-
-::
-
-    source <YOURVIRTUALENV>/bin/activate
-    (myenv) $ pip install tox
-    (myenv) $ tox
 
 Credits
 -------
 
-Tools used in rendering this package:
+Tools/packages used in rendering this package:
 
 *  Cookiecutter_
 *  `cookiecutter-djangopackage`_
@@ -71,3 +62,4 @@ Tools used in rendering this package:
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`cookiecutter-djangopackage`: https://github.com/pydanny/cookiecutter-djangopackage
 .. _`geodjango-tigerline`_: https://github.com/adamfast/geodjango-tigerline
+
