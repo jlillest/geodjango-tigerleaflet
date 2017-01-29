@@ -11,7 +11,7 @@ class StateAdmin(admin.OSMGeoAdmin):
                     'area_description_code',
                     'feature_class_code',
                     'functional_status'
-                   )
+                    )
 
 
 class CountyAdmin(admin.OSMGeoAdmin):
@@ -21,7 +21,7 @@ class CountyAdmin(admin.OSMGeoAdmin):
                     'fips_55_class_code',
                     'feature_class_code',
                     'functional_status'
-                   )
+                    )
     search_fields = ('name', 'state_fips_code')
 
 

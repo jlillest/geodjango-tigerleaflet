@@ -32,9 +32,8 @@ class Command(BaseCommand):
     help = 'Installs the 2011-2016 tigerline files for states'
 
     def add_arguments(self, parser):
-        parser.add_argument('--path', default='', dest='path',
-            help='The directory where the state data is stored.'
-        )
+        help_string = 'The directory where the state data is stored.'
+        parser.add_argument('--path', default='', dest='path', help=help_string)
 
     def handle(self, *args, **kwargs):
         path = kwargs['path']
@@ -51,7 +50,6 @@ class Command(BaseCommand):
             if os.path.exists(os.path.join(path, directory)):
                 print('Found %s files.' % year)
                 tiger_file = os.path.join(path, directory + "/" + directory + ".shp")
-                file_found = True
                 break
 
         if not tiger_file:

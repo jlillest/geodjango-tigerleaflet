@@ -9,6 +9,7 @@ from tigerleaflet.models import State
 def get_geojson(data, fields):
     return serialize('geojson', data, geometry_field='mpoly', fields=fields)
 
+
 class CountryData(View):
     fields = ('name', 'usps_code', 'fips_code')
 
@@ -20,6 +21,7 @@ class CountryData(View):
         geojson = get_geojson(map_data, self.fields)
 
         return HttpResponse(geojson, content_type='application/json')
+
 
 class StateData(View):
     fields = ('name', 'usps_code', 'fips_code')
@@ -34,6 +36,7 @@ class StateData(View):
         geojson = get_geojson(map_data, self.fields)
 
         return HttpResponse(geojson, content_type='application/json')
+
 
 class CountyData(View):
     fields = ('name', 'fips_code', 'usps_code')

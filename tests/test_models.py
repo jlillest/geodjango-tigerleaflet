@@ -10,8 +10,6 @@ Tests for `Leaflet for Geodjango with US TIGER State and County data` models mod
 
 from django.test import TestCase
 
-from tigerleaflet import models
-
 
 class TestTigerleaflet(TestCase):
 

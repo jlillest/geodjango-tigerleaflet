@@ -13,6 +13,7 @@ except ImportError:
 
 from tigerleaflet.models import County
 
+
 def county_import(county_shp, year):
     county_mapping = {
         'state_fips_code': 'STATEFP',
@@ -34,9 +35,8 @@ class Command(BaseCommand):
     help = 'Installs the 2011-2016 tigerline files for counties'
 
     def add_arguments(self, parser):
-        parser.add_argument('--path', default='', dest='path',
-            help='The directory where the county data is stored.'
-        )
+        help_string = 'The directory where the county data is stored.'
+        parser.add_argument('--path', default='', dest='path', help=help_string)
 
     def handle(self, *args, **kwargs):
         path = kwargs['path']
