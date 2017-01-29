@@ -61,5 +61,5 @@ Tools/packages used in rendering this package:
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`cookiecutter-djangopackage`: https://github.com/pydanny/cookiecutter-djangopackage
-.. _`geodjango-tigerline`_: https://github.com/adamfast/geodjango-tigerline
+.. _`geodjango-tigerline`: https://github.com/adamfast/geodjango-tigerline
 
