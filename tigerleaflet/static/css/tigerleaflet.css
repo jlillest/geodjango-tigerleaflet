@@ -11,3 +11,8 @@
     margin: 0 0 5px;
     color: #777;
 }
+
+.leaflet-container-default {
+  width: 600px;
+  height: 400px;
+}

@@ -1,0 +1,10 @@
+{% load leaflet_tags %}
+{% load geojson_tags %}
+
+{% leaflet_css %}
+{% leaflet_js %}
+
+{% load static from staticfiles %}
+<link rel="stylesheet" href="{% static 'css/tigerleaflet.css' %}">
+<script src='{% static "js/jquery.min.js" %}'></script>
+<script src='{% static "js/tigerleaflet.js" %}'></script>

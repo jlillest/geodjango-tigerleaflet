@@ -14,7 +14,7 @@ info.update = function (properties) {
     this._div.innerHTML = html;
 };
 
-function tigerleafletMap(mapName, coordinates, zoom) {
+function tigerleafletMap(mapName, coordinates=[37.22, -90.41], zoom=3) {
     var map = L.map(mapName).setView(coordinates, zoom);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
     info.addTo(map);
@@ -25,13 +25,15 @@ function getGeojson(map_data) {
   link_prefix = map_data['prefix'];
 
   $.ajax({
-    type: "GET",
+    type: "POST",
     url: map_data['url'],
     data: map_data['data'],
-  }).done(function (ajax) { map_data['function'](map_data['map'], ajax); });
+  }).done(function (ajax) {
+    addData(map_data['map'], map_data['function'], map_data['zoom'], ajax);
+  });
 }
 
-function addStateData(map, data) {
+function addData(map, goToFunction, zoom, data) {
   geojson = L.geoJson(data, {
     style: function (feature) {
         return getStyle(getColor(feature.properties.fips_code));
@@ -40,26 +42,15 @@ function addStateData(map, data) {
         layer.on({
             mouseover: highlightFeature,
             mouseout: resetHighlight,
-            click: goToState,
+            click: goToFunction,
         });
     }
   }).addTo(map);
-}
 
-function addCountyData(map, data) {
-  geojson = L.geoJson(data, {
-    style: function (feature) {
-        return getStyle(getColor(feature.properties.fips_code));
-    },
-    onEachFeature: function (feature, layer) {
-        layer.on({
-            mouseover: highlightFeature,
-            mouseout: resetHighlight,
-            click: goToCounty,
-        });
-    }
-  }).addTo(map);
-  map.fitBounds(geojson);
+  if (zoom)
+  {
+    map.fitBounds(geojson);
+  }
 }
 
 function highlightFeature(e) {
@@ -87,7 +78,7 @@ function goToState(e) {
 
 function goToCounty(e) {
     var usps_code = e.target.feature.properties.usps_code.toLowerCase();
-    var county_name = e.target.feature.properties.name.toLowerCase();
+    var county_name = e.target.feature.properties.name.toLowerCase().split(' ').join('_');
     window.location.href = link_prefix + usps_code + '/' + county_name;
 }
 
